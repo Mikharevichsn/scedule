@@ -9,11 +9,16 @@ html {
 }
 body{
   background-color:#CCCCCC;
-}
 
+}
+.text{
+  margin-top: 50px;
+  display: flex;
+ justify-content: center;
+}
 .boxButton{
-display: flex;
-align-items:center;
-justify-content: center;
+  margin-top: 400px;
+  display: flex;
+ justify-content: center;
 }
 

@@ -9,11 +9,18 @@ router.get('/', (req, res) => {
 })
 
 
-router.post('/', (req, res) => {
-  res.render('index')
-  res.reddirect('newEntry')
-})
+// router.post('/', (req, res) => {
+//   // let a = req.body;
+//   // console.log(a)
+//   res.render('index')
+//   // res.reddirect('newEntry')
+// })
 
+//selectDate
+
+router.get('/newEntry', (req, res) => {
+  res.render('newEntry')
+})
 
 
 module.exports = router;
