@@ -7,18 +7,20 @@ html {
 *:before {
   box-sizing: inherit;
 }
-body{
-  background-color:#CCCCCC;
-
+body {
+  background-color: #cccccc;
 }
-.text{
+.text {
   margin-top: 50px;
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
-.boxButton{
+.boxButton {
   margin-top: 400px;
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
 
+form {
+  margin-top: 80px;
+}
