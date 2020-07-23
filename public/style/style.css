@@ -24,3 +24,6 @@ body {
 form {
   margin-top: 80px;
 }
+.form-group{
+  width: 25%;
+}
