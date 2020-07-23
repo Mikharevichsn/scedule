@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+body{
+  background-color:#CCCCCC;
+}
+
+.boxButton{
+display: flex;
+align-items:center;
+justify-content: center;
+}
+
