@@ -9,12 +9,14 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
-router.get('/newEntry', (req, res) => {
-  res.render('newEntry');
+router.get('/newEntry',async (req, res) => {
+  const services = await Service.find();
+  console.log(services);
+  res.render('newEntry', {services});
 });
 
-router.post('/newEntry', async(req, res) => {
-  await Service.find({title});
+router.post('/newEntry', (req, res) => {
+
   console.log(req.body);
   res.send(req.body);
 });
