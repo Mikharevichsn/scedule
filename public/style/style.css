@@ -2,28 +2,84 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*:after,
-*:before {
+*,*:after,*:before {
   box-sizing: inherit;
 }
+
 body {
   background-color: #cccccc;
 }
 .text {
-  margin-top: 50px;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
 }
 .boxButton {
-  margin-top: 400px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
 }
 
-form {
+/* form {
   margin-top: 80px;
-}
-.form-group{
+} */
+/* .form-group{
   width: 25%;
+} */
+/* .form-row{
+  width: 25%; 
+} */
+
+.nameCall{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+fieldset{
+  padding: 100px 50px;
+  height: 500px;
+  width: 50%;
+  border: 2px solid #343a40 ;
+  border-radius: 10px;
+}
+
+
+
+.dateTime{
+  margin: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.date {
+  padding: .375rem .75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  margin: 0 5px;
+}
+.time{
+  padding: .375rem .75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  margin: 0 5px;
+}
+
+.form-row{
+  margin: 10px 0px;
+}
+
+.form-control{
+  margin: 10px 0px;
+}
+
+.click{
+  margin: 50px 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.select{
+  width: 30%;
 }
