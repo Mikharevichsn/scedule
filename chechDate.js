@@ -1,11 +1,11 @@
-function checkDate(arrBusyTimeOfDay, durotation) {
+function checkDate(arrBusyTimeOfDay, duration) {
   let arrResult = [];
 
   // let tryDate = new Date(arr[0]);
   let tryDate = new Date(2020, 6, 23, 9, 0, 0, 0);
   while (tryDate < arrBusyTimeOfDay[arrBusyTimeOfDay.length - 1]) {
     const checkDate = new Date(tryDate);
-    checkDate.setHours(tryDate.getHours() + durotation);
+    checkDate.setHours(tryDate.getHours() + duration);
     const finishDate = new Date(checkDate);
     checkDate.setMinutes(checkDate.getMinutes() + 15);
 
