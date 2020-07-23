@@ -4,7 +4,10 @@
   <input type="time" name="time">
   <input type="text" name="nameClient">
   <input type="tel" name="phone">
-  [услуга]
-
+     <select class="form-control" id="exampleFormControlSelect1" name = "serviceId">
+      {{#each services}}
+      <option value = "{{this.id}}">{{this.title}}</option>
+      {{/each}}
+    </select>
   <button type="submit">Добавить запись</button>
 </form>
