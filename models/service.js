@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
 const servicesSchema = mongoose.Schema({
+  title: String,
   price: Number,
-  duration: Date,
+  duration: Number,
 });
 
 const Service = mongoose.model('services', servicesSchema);
