@@ -2,7 +2,7 @@
   Выберите дату: <input type="date" name="date">
    <div class="form-group">
     <label for="exampleFormControlSelect1">Выберите услугу:</label>
-    <select class="form-control" id="exampleFormControlSelect1" name = "serviceId">
+    <select class="form-control select" id="exampleFormControlSelect1" name = "serviceId">
       {{#each services}}
       <option value = "{{this.id}}">{{this.title}}</option>
       {{/each}}

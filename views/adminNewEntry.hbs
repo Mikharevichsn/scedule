@@ -1,13 +1,46 @@
-<h1>Добавление записи администратором</h1>
-<form action="" method="post">
-  <input type="date" name="date">
-  <input type="time" name="time">
-  <input type="text" name="nameClient">
-  <input type="tel" name="phone">
-     <select class="form-control" id="exampleFormControlSelect1" name = "serviceId">
-      {{#each services}}
-      <option value = "{{this.id}}">{{this.title}}</option>
-      {{/each}}
-    </select>
-  <button type="submit">Добавить запись</button>
+<div class="text">
+  <h1>Добавление записи администратором</h1>
+</div>
+
+
+
+<form action="" method="post" class="nameCall">
+  <fieldset>
+
+    <div class="dateTime">
+      <input type="date" name="date" class="date">
+      <input type="time" name="time" class="time">
+    </div>
+
+
+    <div class="form-group">
+      <!-- элемент input с id = datetimepicker1 -->
+
+      {{!-- <input type="text" name="nameClient">
+  <input type="tel" name="phone"> --}}
+
+      <div class="form-row ">
+
+        <div class="col">
+          <input type="text" class="form-control" placeholder="name">
+        </div>
+
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name">
+        </div>
+
+      </div>
+
+      <select class="form-control" id="exampleFormControlSelect1" name="serviceId">
+        {{#each services}}
+        <option value="{{this.id}}">{{this.title}}</option>
+        {{/each}}
+      </select>
+
+
+      <div class="click">
+        <button type="button" class="btn btn-warning ">Warning</button>
+      </div>
+
+  </fieldset>
 </form>
