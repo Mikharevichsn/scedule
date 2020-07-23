@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const db = require('./models/bd');
 
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
