@@ -3,8 +3,19 @@ const Entry = require('../models/entry');
 const router = express.Router();
 const { Service } = require('../models/service');
 
-router.get('/', (req, res) => {
-  res.render('admin');
+router.get('/', async (req, res) => {
+  const day = '2020-07-25';
+  const dateDiapasonBegin = new Date(`${day}T00:00:00`);
+  const dateDiapasonEnd = new Date(`${day}T23:59:59`);
+
+  const entriesOfDay = await Entry.find()
+    .where('dateBegin')
+    .gt(dateDiapasonBegin)
+    .lte(dateDiapasonEnd)
+    .sort('dateBegin')
+    .populate('serviceId');
+  console.log(entriesOfDay);
+  res.render('admin', { entriesOfDay });
 });
 
 router.get('/newEntry', async (req, res) => {
@@ -18,7 +29,7 @@ router.post('/newEntry', async (req, res) => {
   console.log(req.body);
   const dateBegin = new Date(`${req.body.date}T${req.body.time}`);
   const dateEnd = new Date(dateBegin);
-  const service = await Service.findById(req.body.serviceId)
+  const service = await Service.findById(req.body.serviceId);
   dateEnd.setHours(dateEnd.getHours() + service.duration);
   // console.log(dateBegin);
   const { nameClient, phone, serviceId } = req.body;
@@ -27,7 +38,7 @@ router.post('/newEntry', async (req, res) => {
     dateEnd,
     nameClient,
     phone,
-    serviceId
+    serviceId,
   });
   res.send(req.body);
 });

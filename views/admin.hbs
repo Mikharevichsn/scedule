@@ -1,29 +1,22 @@
 <table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Услуга</th>
+      <th scope="col">Начало процедуры</th>
+      <th scope="col">Конец процедуры</th>
     </tr>
   </thead>
   <tbody>
+    {{#each entriesOfDay}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{{this.nameClient}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.serviceId.title}}</td>
+      <td>{{this.dateBegin}}</td>
+      <td>{{this.dateEnd}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {{/each}}
   </tbody>
 </table>
