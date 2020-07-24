@@ -27,7 +27,12 @@
 
 <script>
   const times = document.querySelectorAll('.time');
+  let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
   for (let time of times) {
-    time.innettext = new Date(time.innerText).toLocaleDateString()
+
+    time.innerHTML = new Date(time.innerHTML).toLocaleDateString('ru-RU', options)
+    { { !-- var date = new Date(times[0].innerHTML); --} }
+
+    { { !--console.log(date.toLocaleDateString('ru-RU', options)); --} }
   }
 </script>
