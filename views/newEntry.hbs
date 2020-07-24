@@ -2,19 +2,29 @@
   <fieldset>
   
    
-   <div class="dataEntry">Выберите дату: <input type="date" name="date" class="dataEntryinput"></div>
+   <div class="dataEntry">
+     Выберите дату: <input type="date" name="date" class="dataEntryinput">
+   </div>
    
    <div class="selectEntry">
+
     <label for="exampleFormControlSelect1">Выберите услугу:</label>
+    
     <select class="form-control select" id="exampleFormControlSelect1" name = "serviceId">
+
       {{#each services}}
       <option value = "{{this.id}}">{{this.title}}</option>
       {{/each}}
+
     </select>
+  
   </div>
+
+
   <div class="click">
         <button type="button" class="btn btn-warning ">Warning</button>
-     </div>
+  </div>
+
   </fieldset> 
 </form> 
 
