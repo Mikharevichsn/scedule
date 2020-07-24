@@ -1,1 +1,22 @@
-step2
+<style>
+  .item {
+    width: 310px;
+    text-align: center;
+  }
+
+  .item:hover {
+    background: yellow;
+    cursor: pointer;
+    transition: 1s;
+  }
+</style>
+<h1>Выберите свободное время</h1>
+<div class="row">
+  <div class="d-flex flex-row mb-3 flex-wrap">
+    {{#each vacantTimes}}
+    <div class="item">{{this}}</div>
+    {{/each}}
+  </div>
+</div>
+
+<a href="/newEntry" class="btn">Назад</a>

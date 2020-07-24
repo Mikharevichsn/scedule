@@ -1,4 +1,4 @@
-// const db = require('./models/bd');
+const db = require('./models/bd');
 const Entry = require('./models/entry');
 
 async function getBusyTime(day) {
@@ -43,9 +43,9 @@ async function checkDate(day, duration) {
   // arrBusyTimeOfDay.unshift(new Date(`${day}T08:45:00`));
   arrBusyTimeOfDay.push(new Date(`${day}T19:15:00`));
 
-  for (let date of arrBusyTimeOfDay) {
-    console.log(`${date}\n`);
-  }
+  // for (let date of arrBusyTimeOfDay) {
+  //   console.log(`${date}\n`);
+  // }
 
   // let tryDate = new Date(arr[0]);
   let tryDate = new Date(`${day}T08:45:00`); //начало рабочего дня
@@ -85,6 +85,6 @@ async function checkDate(day, duration) {
   return arrResult;
 }
 
-checkDate('2020-07-28', 1).then((data) => console.log(data));
+// checkDate('2020-07-28', 1).then((data) => console.log(data));
 
 module.exports = checkDate;
