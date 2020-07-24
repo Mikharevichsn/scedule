@@ -24,7 +24,10 @@ router.get('/:day', async (req, res) => {
   // arr = [];
   // entriesOfDay.forEach(el => arr.push(el.dateBegin.getHours()));
   // console.log(arr);
-
+  entriesOfDay.forEach((el, index) => {
+    entriesOfDay[index].dateBegin = `${el.dateBegin}`;
+    entriesOfDay[index].dateEnd = `${el.dateEnd}`;
+  });
   res.render('admin', { entriesOfDay });
 });
 
