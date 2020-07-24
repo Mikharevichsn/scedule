@@ -1,14 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const service = require('../models/service');
+const checkDate = require('../getBusyTime');
 const { Service } = require('../models/service');
 
 router.get('/', (req, res) => {
   res.render('index');
 });
 
-router.get('/newEntryStep2', (req, res) => {
-  res.render('newEntryStep2');
+router.get('/newEntryStep2', async (req, res) => {
+  const { date, serviceId } = req.query;
+  // console.log(req.query);
+  // console.log(date, serviceId);
+  const service = await Service.findById(serviceId);
+  const vacantTimes = await checkDate(date, service.duration);
+  // console.log('>>>>>', vacantTimes);
+  res.render('newEntryStep2', { vacantTimes });
 });
 
 router.get('/newEntry', async (req, res) => {
@@ -23,3 +30,6 @@ router.post('/newEntry', (req, res) => {
 });
 
 module.exports = router;
+
+// console.log(checkDate('2020-07-23'));
+// checkDate('2020-07-23', 1).then((data) => console.log(data));
