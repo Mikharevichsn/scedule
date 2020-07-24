@@ -3,6 +3,7 @@ const router = express.Router();
 const service = require('../models/service');
 const checkDate = require('../getBusyTime');
 const { Service } = require('../models/service');
+const Entry = require('../models/entry');
 
 router.get('/', (req, res) => {
   res.render('index');
@@ -13,9 +14,21 @@ router.get('/newEntryStep2', async (req, res) => {
   // console.log(req.query);
   // console.log(date, serviceId);
   const service = await Service.findById(serviceId);
-  const vacantTimes = await checkDate(date, service.duration);
+  const vacantTimesTmp = await checkDate(date, service.duration);
   // console.log('>>>>>', vacantTimes);
-  res.render('newEntryStep2', { vacantTimes });
+  let vacantTimes = [];
+  for (let elem of vacantTimesTmp) {
+    vacantTimes.push(elem.replace(/(\:0 )|(\:0$)/g, ':00 '));
+  }
+  res.render('newEntryStep2', { vacantTimes, date, service });
+});
+
+router.post('/newEntryStep3addEntry', async (req, res) => {
+  console.log(req.body);
+  // const { ateBegin, dateEnd, nameClient, phone, serviceId } = req.body;
+  const newEntry = req.body;
+  await Entry.create(newEntry);
+  res.send('Запись добавлена! Спасибо!');
 });
 
 router.get('/newEntry', async (req, res) => {
