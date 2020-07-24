@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
+router.get('/newEntryStep2', (req, res) => {
+  res.render('newEntryStep2');
+});
+
 router.get('/newEntry', async (req, res) => {
   const services = await Service.find();
   // console.log(services);
