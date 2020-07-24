@@ -1,4 +1,4 @@
-const db = require('./models/bd');
+// const db = require('./models/bd');
 const Entry = require('./models/entry');
 
 async function getBusyTime(day) {
@@ -64,10 +64,27 @@ async function checkDate(day, duration) {
         : true)
     ) {
       // arrResult.push()
-      console.log(`варик встроиться с ${tryDate} до ${finishDate}`);
+      var options = {
+        era: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        timezone: 'UTC',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+      };
+
+      let str = `с ${tryDate.getHours()}:${tryDate.getMinutes()} до ${finishDate.getHours()}:${finishDate.getMinutes()}`;
+      // console.log(str);
+      arrResult.push(str);
     }
     tryDate = new Date(tryDate.setMinutes(tryDate.getMinutes() + 15));
   }
+  return arrResult;
 }
 
-checkDate('2020-07-28', 1);
+checkDate('2020-07-28', 1).then((data) => console.log(data));
+
+module.exports = checkDate;
