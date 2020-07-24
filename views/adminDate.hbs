@@ -1,0 +1,13 @@
+Выберите дату<input type="date" name="date" id="date">
+<button id="showList">Показать записи</button>
+<script>
+  const btn = document.querySelector('#showList')
+  const inputDate = document.querySelector('#date')
+  btn.addEventListener('click', () => {
+    if (inputDate.value) {
+      console.log('123')
+      window.location.replace(`/admin/${inputDate.value}`)
+    }
+    else alert('Выберите дату')
+  })
+</script>

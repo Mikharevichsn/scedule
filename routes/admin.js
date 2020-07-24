@@ -4,17 +4,27 @@ const router = express.Router();
 const { Service } = require('../models/service');
 
 router.get('/', async (req, res) => {
-  const day = '2020-07-25';
+  res.render('adminDate');
+});
+
+router.get('/:day', async (req, res) => {
+  const day = req.params.day;
+  // const day = '2020-07-25';
   const dateDiapasonBegin = new Date(`${day}T00:00:00`);
   const dateDiapasonEnd = new Date(`${day}T23:59:59`);
 
-  const entriesOfDay = await Entry.find()
+  let entriesOfDay = await Entry.find()
     .where('dateBegin')
     .gt(dateDiapasonBegin)
     .lte(dateDiapasonEnd)
     .sort('dateBegin')
     .populate('serviceId');
-  console.log(entriesOfDay);
+  // console.log(entriesOfDay[1].dateBegin)
+  // console.log(entriesOfDay[1].dateBegin.getHours())
+  // arr = [];
+  // entriesOfDay.forEach(el => arr.push(el.dateBegin.getHours()));
+  // console.log(arr);
+
   res.render('admin', { entriesOfDay });
 });
 
