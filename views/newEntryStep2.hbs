@@ -59,7 +59,7 @@
 </div>
 
 <a href="/newEntry" class="btn">Назад</a>
-<button class="btn" id="addEntry">Записаться</button>
+
 
 <div class="popup">
   <span class="close">X</span>
@@ -82,10 +82,7 @@
   console.log(addEntry)
 
 
-  addEntry.addEventListener('click', () => {
-    console.log(123)
-    popup.classList.toggle('active')
-  })
+
 
   for (let item of items) {
     item.addEventListener('click', event => {
