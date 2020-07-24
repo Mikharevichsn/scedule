@@ -20,6 +20,10 @@ nav{
   margin-top: 90px;
   display: flex;
   justify-content: center;
+  font-style: oblique;
+  text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+                 10px 20px 5px rgba(0,0,0,0.05),
+                 -10px 20px 5px rgba(0,0,0,0.05);
 }
 .card{
   box-shadow: 0 0 10px rgba(26, 24, 24, 0.5);
@@ -40,6 +44,7 @@ border-radius: 10px;
 
 .textfoto{
 color:#212529de;
+font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .firstButton{
   background-color: #333333;
@@ -150,6 +155,17 @@ margin: 20px;
 height: 35px;
 
 }
+.table{
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(146, 128, 49, 0.5);
+}
+
+.table-dark {
+  color: #ffc107c7;
+}
+
+
 .bg-light{
   background:rgb(52, 58, 64)!important;
 }
+
