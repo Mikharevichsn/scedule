@@ -1,6 +1,10 @@
-<form action="" method="post">
-  Выберите дату: <input type="date" name="date">
-   <div class="form-group">
+<form action="" method="post" class="newEntyForm">
+  <fieldset>
+  
+   
+   <div class="dataEntry">Выберите дату: <input type="date" name="date" class="dataEntryinput"></div>
+   
+   <div class="selectEntry">
     <label for="exampleFormControlSelect1">Выберите услугу:</label>
     <select class="form-control select" id="exampleFormControlSelect1" name = "serviceId">
       {{#each services}}
@@ -9,7 +13,10 @@
     </select>
   </div>
 
-  <button type="submit">Записаться</button>
+  <div class="click">
+        <button type="button" class="btn btn-warning ">Warning</button>
+      </div>
+  </fieldset> 
 </form> 
 
 

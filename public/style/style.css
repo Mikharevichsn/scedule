@@ -20,6 +20,10 @@ body {
   justify-content: center;
 }
 
+.btn{
+  background-color: #343a40;
+}
+
 /* form {
   margin-top: 80px;
 } */
@@ -49,6 +53,7 @@ fieldset{
 
 .dateTime{
   margin: 15px;
+  display: flex;
   text-align: center;
   justify-content: center;
 }
@@ -82,4 +87,35 @@ fieldset{
 
 .select{
   width: 30%;
+
+}
+
+.newEntyForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.dataEntry{
+margin: 20px;
+
+}
+
+.selectEntry{
+  margin: 20px;
+  
+}
+
+.select {
+  width: 50%;
+  display: inline-block;
+
+}
+.dataEntryinput{
+  padding: .375rem .75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  margin: 0 5px;
+  color: #495057
 }
