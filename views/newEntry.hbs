@@ -13,7 +13,7 @@
       <select class="form-control select" id="exampleFormControlSelect1" name="serviceId">
 
         {{#each services}}
-        <option value="{{this.id}}">{{this.title}}</option>
+        <option value="{{this.id}}">{{this.title}}, длительность: {{this.duration}} часа</option>
         {{/each}}
 
       </select>
@@ -22,7 +22,7 @@
 
 
     <div class="click">
-      <button type="submit" class="btn btn-warning ">Warning</button>
+      <button type="sudmit" class="btn btn-warning ">Далее</button>
     </div>
 
   </fieldset>
