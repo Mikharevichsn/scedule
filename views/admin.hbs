@@ -1,4 +1,3 @@
-
 <table class="table table-hover table-dark">
   <thead>
     <tr>
@@ -15,11 +14,20 @@
       <td>{{this.nameClient}}</td>
       <td>{{this.phone}}</td>
       <td>{{this.serviceId.title}}</td>
-      <td>{{this.dateBegin}}</td>
-      <td>{{this.dateEnd}}</td>
+      <td class="time">{{this.dateBegin}}</td>
+      <td class="time">{{this.dateEnd}}</td>
     </tr>
     {{/each}}
   </tbody>
 </table>
 
 <a class="btn" href="/admin">Назад</a>
+
+
+
+<script>
+  const times = document.querySelectorAll('.time');
+  for (let time of times) {
+    time.innettext = new Date(time.innerText).toLocaleDateString()
+  }
+</script>
