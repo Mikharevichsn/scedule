@@ -1,15 +1,15 @@
 # scedule
 
-deber
-{{date1}}
+<h2>Онлайн расписание массажного кабинета</h2>
 
-{{date2}}
-  margin-top: 400px;
+Реализован на NodeJS + Express + MongoDB
 
-    display: flex;
-align-items:center;
-justify-content: center;
-/home/schennikova-dev/Рабочий стол/phase 1/Phase-2/week2/day3/scedule/public/img/christin-hume-0MoF-Fe0w0A-unsplash.jpg
-/home/schennikova-dev/Рабочий стол/phase 1/Phase-2/week2/day3/scedule/public/img/
+Чтобы записаться пользователь: 
+1) Заходит на сайт
+2) Выбирает услугу и дату на которую хочет записаться
+3) Скрипт показывает свободные места куда можно записаться выбранной услугой с учетом уже имеющихся записей и длительности выбранной пользователем услуги.
+4) Пользователь нажимает на подходящее ему время из предложенных
+5) Вводит свои имя и телефон
 
-/home/schennikova-dev/Рабочий стол/phase 1/Phase-2/week2/day3/scedule/public/img/chelsea-shapouri-r40EYKVyutI-unsplash.jpg
+У Администратора есть отдельная страница /admin/ где админ может посмотреть уже имеющиеся записи в системе.
+ 
